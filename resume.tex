@@ -1,0 +1,153 @@
+%%=====================================================================================
+%%
+%%       Filename:  resume.tex
+%%
+%%    Description:  zack parchman's resume
+%%
+%%        Version:  1.0
+%%        Created:  11/17/17
+%%       Revision:  none
+%%
+%%         Author:  Zachary Parchman
+%%   Organization:  
+%%      Copyright:  Copyright (c) 2017, Zachary Parchman
+%%
+%%          Notes:  
+%%
+%%=====================================================================================
+
+
+\documentclass[10pt]{res}
+\usepackage{tabularx}
+\usepackage{changepage}
+\usepackage{enumitem}
+%\usepackage{bibentry}
+
+\newcommand{\replaceme}{\huge{\bf{REPLACE\_ME}}}
+
+\newcommand{\job}[5]{
+    {\bf #1} \hfill #2 \\
+    #3 #4
+#5
+}
+
+\setlength{\textheight}{19.5in} % increase text height to fit on 1-page 
+
+\newenvironment{indentblock}{
+    \begin{adjustwidth} {\parindent}{4em}
+        \hspace{-\parindent}}
+        {\end{adjustwidth}}
+
+\begin{document} 
+\nocite{*}
+
+%for using bibtex without a refrence section
+%\bibliographystyle{plain}
+%\nobibliography{resume}
+
+%magic
+\fontsize{10}{11}\selectfont
+
+\begin{center}
+\begin{Huge}
+    \bf{Zachary Wayne Parchman}
+\end{Huge}
+\end{center}
+
+\begin{resume}
+
+\begin{large}
+\begin{tabularx}{\textwidth}{p{2.25in} X X}
+    1574 Brinkley Branch Road \newline Hendersonville TN 37075
+    & (615) 668-2543 & zwparchman@gmail.com\\
+\end{tabularx}
+\end{large}
+
+\vspace{-0.30in}
+\rule{\textwidth}{0.4pt}
+\vspace{-0.30in}
+
+\begin{section}{Objective}
+    \replaceme
+\end{section}
+
+\begin{section}{Technical Skills}
+\begin{itemize}[leftmargin=*] \itemsep -2pt  % reduce space between items
+    \item {Languages: C and C++, Java, Python 2 and 3, x86 Assembly}
+    \item {Tools and Libraries: C++ Standard Template Library, MPI, Cuda, OpenMP, Git and SVN}
+\end{itemize}
+\end{section}
+
+\begin{section}{Education}
+    {\bf Bachelor of Science in Computer Science, December 2013\\
+    Tennessee Technological University, Cookeville, Tennessee}\\
+    Graduated with a GPA of 3.08 on a 4.0 scale\\
+    {\bf Courses completed:}
+
+    \vspace{-0.15in}
+    \begin{tabularx}{\textwidth}{l l l}
+        Design of Algorithms & Operating Systems & Artificial Intelligence \\
+        Databases & Computer Networking & Parallel Programming \\
+    \end{tabularx}
+
+    {\bf Master of Science in Computer Science, Currently Pursuing\\
+    Tennessee Technological University, Cookeville, Tennessee} \\
+    Current GPA 3.47 on a 4.0 scale \\
+    Courses completed:
+
+    \vspace{-0.15in}
+    \begin{tabularx}{\textwidth}{l l}
+        Internet security & Internet protocols \\
+        Internet algorithmics & High performance computing \\
+    \end{tabularx}
+\end{section}
+
+\section{Experience}
+\job{Research Programmer Intern} {May 2015 - May 2017} {Oak Ridge National Laboratory / ORISE, Oak Ridge Tennessee}
+{
+\begin{itemize} \itemsep -2pt  % reduce space between items
+         \item {I Designed and implemented a new programming model for 
+             heterogeneous large scale systems as part of a team.}
+\end{itemize}
+}
+\vspace{-2mm}
+\job{Research Programmer Intern} {May 2015 - August 2015}
+{Oak Ridge National Labratory / ORISE, Oak Ridge Tennessee}
+{
+\begin{itemize} \itemsep -2pt  % reduce space between items
+         \item {I planed and executed the conversion of benchmarking 
+             programs to use an experimental\\ 
+             modification to MPI to allow for fault tolerance}
+\end{itemize}
+}
+
+\vspace{-2mm}
+\job{Tearcher's Assistant} {January 2014 - May 2016}
+{Tennessee Technological University, Cookeville, Tennessee}
+{
+\begin{itemize} \itemsep -2pt  % reduce space between items
+         \item {I graded and toutered for computer science classes to assist a 
+                professor in collage courses}
+\end{itemize}
+}
+
+\section{Publications}
+\begin{itemize}
+    %\bibitem{bob}
+    %\bibitem{DBLP:conf/cluster/ParchmanAV17}
+    \item \cite {bob}
+\end{itemize}
+
+\section{References}
+\vspace{2mm}
+\begin{tabularx}{\textwidth}{X X}
+Dr. Thomas Naughton  & Dr. Manjunath Venkata \\
+Research staff & Research staff \\
+UT-Battelle / Oak Ridge National Laboratory & UT-Battelle / Oak Ridge National Laboratory \\
+(865) 576-4184 & (865) 574-5949 \\
+naughtont@ornl.gov & manjugv@ornl.gov \\
+Relationship: Mentor for 2015 internship & Relationship: Mentor for 2016 internship
+\end{tabularx}
+
+\end{resume}
+\end{document}

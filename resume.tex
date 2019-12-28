@@ -2,7 +2,7 @@
 %%
 %%       Filename:  resume.tex
 %%
-%%    Description:  zack parchman's resume
+%%    Description:  Zack Parchman's resume
 %%
 %%        Version:  1.0
 %%        Created:  11/17/17
@@ -17,125 +17,124 @@
 %%=====================================================================================
 
 
-\documentclass[10pt]{res}
-\usepackage{tabularx}
-\usepackage{changepage}
-\usepackage{enumitem}
-\usepackage{bibentry}
+\documentclass{res} \usepackage{tabularx} \usepackage{changepage}
+\usepackage{enumitem} \usepackage{bibentry}
 
 \newcommand{\replaceme}{{\huge{\bf{REPLACE\_ME}}}}
 
-\newcommand{\job}[5]{
-    {\bf #1} \hfill #2 \\
-    #3 #4
-    #5
+\newcommand{\job}[5]{ 
+{\bf #1} \hfill #2 \\ 
+#3 \hfill #4\\ 
+#5
 }
 
-\setlength{\textheight}{19.5in} % increase text height to fit on 1-page 
+%\setlength{\textheight}{9.3in} % Set the length of a page to cause page breaks at convenient locations
 
-
-\newenvironment{indentblock}{
-    \begin{adjustwidth} {\parindent}{4em}
-        \hspace{-\parindent}}
-        {\end{adjustwidth}}
+%\newenvironment{indentblock}{ \begin{adjustwidth} {\parindent}{4em}
+%\hspace{-\parindent}} {\end{adjustwidth}}
 
 \begin{document} 
 
-%for using bibtex without a refrence section
-\bibliographystyle{plain}
-\nobibliography{resume}
+%for using bibtex without a reference section
+\bibliographystyle{plain} \nobibliography{resume}
 
 %magic
 \fontsize{10}{11}\selectfont
 
 \begin{resume}
 
-%raise top margin so it fits on one page nicelly
-\vspace{-15mm}
+%raise top margin so it fits on one page nicely "setscrew"
+\vspace{-20mm}
 \begin{center}
-\begin{Huge}
-    \bf{Zachary Wayne Parchman}
-\end{Huge}
+    {\bf \Huge Zachary Wayne Parchman}
 \end{center}
 \vspace{-4mm}
 
-
 \begin{large}
-\begin{tabularx}{\textwidth}{p{2.10in} X X}
-    1574 Brinkley Branch Road \newline Hendersonville, TN 37075
-    & (615) 668-2543 & zwparchman@gmail.com\\
-\end{tabularx}
+%\begin{center}
+    916 Needham Drive Smyrna, TN 37167 \\
+    Cellphone Number: (615) 668-2543 \hfill
+    zwparchman@gmail.com
+%\end{center}
 \end{large}
-
-\vspace{-0.30in}
 \rule{\textwidth}{0.4pt}
-%\vspace{-0.30in}
 
 \begin{section}{Objective}
-    I seek to obtain full time employment.
+    I am looking for a challenging and engaging position that provides opportunities for advancement.
 \end{section}
 
 \begin{section}{Technical Skills}
-\begin{itemize}[leftmargin=*] \itemsep -2pt  % reduce space between items
-    \item {Languages: C, C++, Java, Python 2 and 3, x86 Assembly, Rust}
-    \item {Tools and Libraries: C++ Standard Template Library, MPI, Cuda, OpenMP, Git and SVN}
-\end{itemize}
+    {Languages: C\#, SQL, C, C++, Java, Javascript, HTML, CSS, Python 2 and 3, x86 Assembly, Rust}
+
+    {Tools and Libraries: .Net, WPF, MFC, SQL Server, Cuda,  MPI, OpenMP, Git, SVN, \LaTeX, Android}
+
+    I have experience programming for Linux and Windows systems varying in size from super computers to embedded devices. 
+    I also have experience working directly with customers to define and refine system requirements.
+    I have taken trips to customer facilities to install software projects both with and without support.
+    I have worked with my coworkers to develop new abstractions to allow us to do our job more quickly and accurately.
 \end{section}
+
+\section{Experience}
+\job{Software Developer} 
+{March 2018 - Present} 
+{Quality Manufacturing Systems Incorporated}
+{La Vergne Tennessee}
+{
+    I have designed and implement software for automated pharmacies. This
+    software includes real time  control software, web services, and database
+    update applications in both the handheld and desktop variety  used by the
+    line workers.  To develop this software I have worked closely with our
+    customers to define the requirements for these
+    systems and find potential short comings of the defined solutions.
+    Installation of this software often requires on site
+    installation trips to install, test, and debug software
+    changes often while the production line is in use. The longest of such
+    trips I was involved in was seven days. I am also responsible
+    for providing emergency support if there is an event that causes the
+    production line to shutdown no matter the time of day.
+}
+
+\job{Research Programmer Intern} 
+{May 2015 - May 2017} 
+{Oak Ridge National Laboratory / ORISE} 
+{Oak Ridge Tennessee}
+{
+    I designed and implemented a new programming model for heterogeneous large scale systems as part of a team.
+    This effort resulted in multiple scientific papers and patents.
+}
+
+\job{Research Programmer Intern} 
+{May 2015 - August 2015}
+{Oak Ridge National Laboratory / ORISE}
+{Oak Ridge Tennessee}
+{
+    I planned and executed the conversion of benchmarking 
+    programs to use an experimental
+    modification to MPI to allow for fault tolerance.
+}
+
+\job{Teacher's Assistant} {January 2014 - May 2016}
+{Tennessee Technological University}
+{Cookeville, Tennessee}
+{
+    I graded and tutored for computer science classes to assist a 
+    professor in college courses.
+}
 
 \begin{section}{Education}
     {\bf Bachelor of Science in Computer Science, December 2013\\
     Tennessee Technological University, Cookeville, Tennessee}\\
-    Graduated with a GPA of 3.08 on a 4.0 scale\\
-    {\bf Courses completed:}
-
-    \vspace{-0.15in}
-    \begin{tabularx}{\textwidth}{l l l}
-        Design of Algorithms & Operating Systems & Artificial Intelligence \\
-        Databases & Computer Networking & Parallel Programming \\
-    \end{tabularx}
-
-    {\bf Master of Science in Computer Science, Currently Pursuing\\
-    Tennessee Technological University, Cookeville, Tennessee} \\
-    Current GPA 3.47 on a 4.0 scale \\
-    Courses completed:
-
-    \vspace{-0.15in}
-    \begin{tabularx}{\textwidth}{l l}
-        Internet Security & Internet Protocols \\
-        Internet Algorithmics & High Performance Computing \\
-    \end{tabularx}
+    Graduated with a GPA of 3.08 on a 4.0 scale
 \end{section}
 
-\section{Experience}
-\job{Research Programmer Intern} {May 2016 - May 2017} {Oak Ridge National Laboratory / ORISE, Oak Ridge Tennessee}
-{
-I Designed and implemented a new programming model for 
-heterogeneous large scale systems as part of a team.
-}
-
-\job{Research Programmer Intern} {May 2015 - August 2015}
-{Oak Ridge National Laboratory / ORISE, Oak Ridge Tennessee}
-{
-I planned and executed the conversion of benchmarking 
-programs to use an experimental
-modification to MPI to allow for fault tolerance.
-}
-
-\job{Teacher's Assistant} {January 2014 - May 2016}
-{Tennessee Technological University, Cookeville, Tennessee}
-{
-I graded and tutored for computer science classes to assist a 
-professor in college courses.
-}
-
+\newpage
 \section{Publications}
-\begin{itemize}
-    \item \bibentry{DBLP:conf/cluster/ParchmanAV17}
-    \item \bibentry{DBLP:conf/icppw/VenkataAP17}
-    \item \bibentry{DBLP:conf/hpdc/ParchmanVNEBS16}
-\end{itemize}
+\bibentry{DBLP:conf/cluster/ParchmanAV17}
 
-%\newpage
+\bibentry{DBLP:conf/icppw/VenkataAP17}
+
+\bibentry{DBLP:conf/hpdc/ParchmanVNEBS16}
+
 \section{References}
 \vspace{2mm}
 \begin{tabularx}{\textwidth}{X X}

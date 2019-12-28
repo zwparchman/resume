@@ -1,9 +1,9 @@
 % RESUME DOCUMENT STYLE -- Released 23 Nov 1989
 %    for LaTeX version 2.09
 % Copyright (C) 1988,1989 by Michael DeCorte
-
-\typeout{Document Style `res' <26 Sep 89>.}
-
+%
+%\typeout{Document Style `res' <26 Sep 89>.}
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % res.sty
 %
@@ -437,7 +437,7 @@
 %    the text next to it
 %
 \let\@@section\relax
-\def\ds@overlapped{\ifx\@@section\relax\newsectionwidth{0.5in}\let
+\def\ds@overlapped{\ifx\@@section\relax\newsectionwidth{0.3in}\let
   \@@section\unboxed@sectiontitle\fi}
 \def\ds@margin{\ifx\@@section\relax\newsectionwidth{1.3in}\let
   \@@section\boxed@sectiontitle\fi}

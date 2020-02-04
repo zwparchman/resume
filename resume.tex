@@ -17,18 +17,35 @@
 %%=====================================================================================
 
 
-\documentclass{res} \usepackage{tabularx} \usepackage{changepage}
-\usepackage{enumitem} \usepackage{bibentry}
+\documentclass{res} 
+\usepackage{tabularx} 
+\usepackage{changepage}
+\usepackage{enumitem} 
+\usepackage{bibentry}
+\usepackage{needspace}
+
 
 \newcommand{\replaceme}{{\huge{\bf{REPLACE\_ME}}}}
+\let\oldSection=\section
+\renewcommand{\section}{%
+    \filbreak
+    \oldSection
+}
 
+%#1 = position
+%#2 = Date
+%#3 = Company
+%#4 = Location
+%#5 = Description
 \newcommand{\job}[5]{ 
-{\bf #1} \hfill #2 \\ 
-#3 \hfill #4\\ 
+\begin{bf}
+#3 \hfill #4 \\
+#1 \hfill #2 \\
+\end{bf}
 #5
 }
 
-%\setlength{\textheight}{9.3in} % Set the length of a page to cause page breaks at convenient locations
+\setlength{\textheight}{10.3in} % Set the length of a page to cause page breaks at convenient locations
 
 %\newenvironment{indentblock}{ \begin{adjustwidth} {\parindent}{4em}
 %\hspace{-\parindent}} {\end{adjustwidth}}
@@ -44,107 +61,172 @@
 \begin{resume}
 
 %raise top margin so it fits on one page nicely "setscrew"
-\vspace{-20mm}
+\vspace{-25mm}
 \begin{center}
     {\bf \Huge Zachary Wayne Parchman}
 \end{center}
-\vspace{-4mm}
-
-\begin{large}
-%\begin{center}
-    916 Needham Drive Smyrna, TN 37167 \\
-    Cellphone Number: (615) 668-2543 \hfill
-    zwparchman@gmail.com
-%\end{center}
-\end{large}
+\vspace{-8mm}
+%
+%\begin{large}
+\begin{small}
+    \begin{center}
+        Smyrna, TN 37167 $|$
+        (615) 668-2543 $|$
+        zwparchman@gmail.com $|$
+        linkedin thing
+        \\
+    \end{center}
+\end{small}
+%\end{large}
+\vspace{-8mm}
 \rule{\textwidth}{0.4pt}
+%
+\begin{minipage}[t]{0.45\textwidth}
+    \begin{section}{Professional Overview}
+        I am experienced working directly with customers and working with
+        systems ranging in size from super computers to embedded devices. 
+    \end{section}
+\end{minipage}
+%
+\begin{minipage}[t]{0.10\textwidth}
+    \hfill
+\end{minipage}
+%
+\begin{minipage}[t]{0.45\textwidth}
+    \begin{section}{Impact Snapshot}
+        \begin{itemize}
+            \item Willing to travel.
+            \item Customer interaction experience
+            %\item I have created new abstractions to improve productivity
+            \item Distributed system experience
+        \end{itemize}
+    \end{section}
+\end{minipage}
 
+\begin{minipage}[t]{0.45\textwidth}
+    \begin{section}{Languages}
+        \begin{tabularx}{\textwidth}{X X}
+            C\# & SQL \\
+            C & C++ \\
+            Java & Javascript \\
+            HTML & CSS \\
+            Python 2 and 3 & x86 Assembly \\
+            Rust & XML
+        \end{tabularx}
+    \end{section}
+\end{minipage}
+%
+\begin{minipage}[t]{0.10\textwidth}
+    \hfill
+\end{minipage}
+%
+\begin{minipage}[t]{0.45\textwidth}
+    \begin{section}{Tools and Libraries}
+        \begin{tabularx}{\textwidth}{X X}
+            .Net & WPF \\
+            MFC & SQL Server \\
+            Cuda & MPI \\
+            OpenMP & Git \\
+            SVN & \LaTeX \\
+            Android
+        \end{tabularx}
+    \end{section}
+\end{minipage}
+%
 \begin{section}{Objective}
     I am looking for a challenging and engaging position that provides opportunities for advancement.
 \end{section}
-
-\begin{section}{Technical Skills}
-    {Languages: C\#, SQL, C, C++, Java, Javascript, HTML, CSS, Python 2 and 3, x86 Assembly, Rust}
-
-    {Tools and Libraries: .Net, WPF, MFC, SQL Server, Cuda,  MPI, OpenMP, Git, SVN, \LaTeX, Android}
-
-    I have experience programming for Linux and Windows systems varying in size from super computers to embedded devices. 
-    I also have experience working directly with customers to define and refine system requirements.
-    I have taken trips to customer facilities to install software projects both with and without support.
-    I have worked with my coworkers to develop new abstractions to allow us to do our job more quickly and accurately.
-\end{section}
-
+%
 \section{Experience}
 \job{Software Developer} 
-{March 2018 - Present} 
+{April 2018 - Present} 
 {Quality Manufacturing Systems Incorporated}
-{La Vergne Tennessee}
+{La Vergne, Tennessee}
 {
-    I have designed and implement software for automated pharmacies. This
-    software includes real time  control software, web services, and database
-    update applications in both the handheld and desktop variety  used by the
-    line workers.  To develop this software I have worked closely with our
-    customers to define the requirements for these
-    systems and find potential short comings of the defined solutions.
-    Installation of this software often requires on site
-    installation trips to install, test, and debug software
-    changes often while the production line is in use. The longest of such
-    trips I was involved in was seven days. I am also responsible
-    for providing emergency support if there is an event that causes the
-    production line to shutdown no matter the time of day.
+    I have designed and implement database driven software for automated
+    pharmacies. This software includes real time  control software, web
+    services, and applications used by the line workers.  
 }
 
 \job{Research Programmer Intern} 
 {May 2015 - May 2017} 
 {Oak Ridge National Laboratory / ORISE} 
-{Oak Ridge Tennessee}
+{Oak Ridge, Tennessee}
 {
     I designed and implemented a new programming model for heterogeneous large scale systems as part of a team.
-    This effort resulted in multiple scientific papers and patents.
+    This effort resulted in multiple scientific papers. One of the
+    more interesting parts was a distributed memory hash table that utilized
+    hardware RDMA and remote atomic operations to implement distributed mutexes.
 }
 
 \job{Research Programmer Intern} 
 {May 2015 - August 2015}
 {Oak Ridge National Laboratory / ORISE}
-{Oak Ridge Tennessee}
+{Oak Ridge, Tennessee}
 {
-    I planned and executed the conversion of benchmarking 
-    programs to use an experimental
-    modification to MPI to allow for fault tolerance.
+    I planned and executed the conversion of benchmarking programs to use an
+    experimental modification to MPI to allow for fault tolerance.
 }
 
 \job{Teacher's Assistant} {January 2014 - May 2016}
 {Tennessee Technological University}
 {Cookeville, Tennessee}
 {
-    I graded and tutored for computer science classes to assist a 
-    professor in college courses.
+    I graded and tutored for computer science classes to assist a professor in
+    college courses.
 }
 
 \begin{section}{Education}
-    {\bf Bachelor of Science in Computer Science, December 2013\\
-    Tennessee Technological University, Cookeville, Tennessee}\\
-    Graduated with a GPA of 3.08 on a 4.0 scale
+    {\bf Bachelor of Science in Computer Science, December 2013}\\
+    Tennessee Technological University, Cookeville, Tennessee\\
+    Graduated with a GPA of 3.08 on a 4.0 scale \\
+    The classes taken include:\\
+        \begin{tabularx}{\textwidth}{@{} X X X}
+            Networking & High Performance Computing & Artificial Intelligence \\
+            Programming Languages & Internet Security & Parallel Programming  \\
+        \end{tabularx}
 \end{section}
 
-\newpage
-\section{Publications}
-\bibentry{DBLP:conf/cluster/ParchmanAV17}
+\begin{section}{Publications}
+Zachary W. Parchman, Ferrol Aderholdt, and Manjunath Gorentla Venkata. {\bf Sharp hash: A high-
+performing distributed hash for extreme-scale systems.} In 2017 IEEE International Conference on
+Cluster Computing, CLUSTER 2017, Honolulu, HI, USA, September 5-8, 2017, pages 647-648, 2017
 
-\bibentry{DBLP:conf/icppw/VenkataAP17}
+Manjunath Gorentla Venkata, Ferrol Aderholdt, and Zachary W. Parchman. {\bf Sharp: Towards program-
+ming extreme-scale systems with hierarchical heterogeneous memory.} In 46th International Conference
+on Parallel Processing Workshops, ICPP Workshops 2017, Bristol, United Kingdom, August 14-17,
+2017, pages 145-154, 2017
 
-\bibentry{DBLP:conf/hpdc/ParchmanVNEBS16}
+F. Aderholdt, M. G. Venkata, and Z. Parchman. {\bf Sharp data constructs: Data constructs to enable
+data-centric computing.} In 2018 26th Euromicro International Conference on Parallel, Distributed and
+Network-based Processing (PDP), pages 170-177, March 2018
 
-\section{References}
-\vspace{2mm}
-\begin{tabularx}{\textwidth}{X X}
-Dr. Thomas Naughton  & Dr. Manjunath Venkata \\
-Research staff & Research staff \\
-UT-Battelle / Oak Ridge National Laboratory & UT-Battelle / Oak Ridge National Laboratory \\
-(865) 576-4184 & (865) 574-5949 \\
-naughtont@ornl.gov & manjugv@ornl.gov \\
-Relationship: Mentor for 2015 internship & Relationship: Mentor for 2016 internship
-\end{tabularx}
+
+Zachary W. Parchman, Geoffroy Vallée, Thomas Naughton, Christian Engelmann, David E. Bernholdt,
+and Stephen L. Scott. {\bf Adding fault tolerance to NPB benchmarks using ULFM.} In Proceedings of
+the ACM Workshop on Fault-Tolerance for HPC at Extreme Scale, FTXS@HPDC 2016, Kyoto, Japan,
+May 31, 2016, pages 27-34, 2016
+\end{section}
+
+%I'll do this right by modifying the bibtext... eventually
+%\bibentry{DBLP:conf/cluster/ParchmanAV17}
+
+%\bibentry{DBLP:conf/icppw/VenkataAP17}
+
+%\bibentry{DBLP:conf/hpdc/ParchmanVNEBS16}
+
+%\bibentry{DBLP:conf/eicpdnp/AderholdDataConstructs}
+
+%\section{References}
+%\vspace{2mm}
+%\begin{tabularx}{\textwidth}{X X}
+%Dr. Thomas Naughton  & Dr. Manjunath Venkata \\
+%Research staff & Research staff \\
+%UT-Battelle / Oak Ridge National Laboratory & UT-Battelle / Oak Ridge National Laboratory \\
+%(865) 576-4184 & (865) 574-5949 \\
+%naughtont@ornl.gov & manjugv@ornl.gov \\
+%Relationship: Mentor for 2015 internship & Relationship: Mentor for 2016 internship
+%\end{tabularx}
 %
 \end{resume}
 \end{document}
